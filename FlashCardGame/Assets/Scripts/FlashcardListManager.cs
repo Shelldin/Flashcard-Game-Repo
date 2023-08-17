@@ -1,18 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FlashcardListManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Flashcard> flashcards;
+
+    public string newQuestion;
+    public string newAnswer;
+
+    public bool isOpenAnswer;
+    public bool isCaseSensitive;
+
+    public void Start()
     {
-        
+        flashcards = new List<Flashcard>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CreateNewFlashcard()
     {
-        
+        flashcards.Add(new Flashcard(newQuestion, newAnswer, isOpenAnswer, isCaseSensitive));
     }
 }
