@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class NewCardCreator : MonoBehaviour
 {
     public FlashcardListManager flashcardListManager;
-
     
-
-    public TextMeshPro questionText;
-    public TextMeshPro answerText;
+    public TMP_InputField questionInput;
+    public TMP_InputField answerInput;
 
     public Toggle isOpenAnswerToggle;
     public Toggle isMultipleChoiceToggle;
