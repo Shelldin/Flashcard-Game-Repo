@@ -8,8 +8,7 @@ public class NewCardCreator : MonoBehaviour
 {
     public FlashcardListManager flashcardListManager;
 
-    //empty game object that contains all the card creation UI elements
-    public GameObject creatorUIGameObject;
+    
 
     public TextMeshPro questionText;
     public TextMeshPro answerText;
