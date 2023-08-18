@@ -18,7 +18,7 @@ public class FlashcardListManager : MonoBehaviour
         flashcards = new List<Flashcard>();
     }
 
-    public void CreateNewFlashcard()
+    public void AddNewFlashcard()
     {
         flashcards.Add(new Flashcard(newQuestion, newAnswer, isOpenAnswer, isCaseSensitive));
     }

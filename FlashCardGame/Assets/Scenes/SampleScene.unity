@@ -2463,6 +2463,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashcardListManager: {fileID: 1684801371}
   creatorUIGameObject: {fileID: 1322443894}
+  questionText: {fileID: 0}
+  answerText: {fileID: 0}
+  isOpenAnswerToggle: {fileID: 0}
+  isMultipleChoiceToggle: {fileID: 0}
+  isCaseSensitiveToggle: {fileID: 0}
 --- !u!114 &1684801371
 MonoBehaviour:
   m_ObjectHideFlags: 0
