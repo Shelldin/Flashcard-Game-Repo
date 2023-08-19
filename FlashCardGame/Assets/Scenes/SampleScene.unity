@@ -2784,7 +2784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1322443895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2945,7 +2945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1599205626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2981,6 +2981,7 @@ GameObject:
   - component: {fileID: 1684801371}
   - component: {fileID: 1684801370}
   - component: {fileID: 1684801372}
+  - component: {fileID: 1684801373}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3016,11 +3017,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashcardListManager: {fileID: 1684801371}
+  creationTogglesController: {fileID: 1684801373}
   questionInput: {fileID: 152577636}
   answerInput: {fileID: 804989109}
-  isOpenAnswerToggle: {fileID: 555348440}
-  isMultipleChoiceToggle: {fileID: 1815161188}
-  isCaseSensitiveToggle: {fileID: 1928048155}
 --- !u!114 &1684801371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,6 +3054,21 @@ MonoBehaviour:
   mainMenuUIGameObject: {fileID: 1599205625}
   creatorUIGameObject: {fileID: 1322443894}
   currentFlashcardUIGameObject: {fileID: 970302717}
+--- !u!114 &1684801373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684801368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6a08e9b7ff8ec4182b50603fafa750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpenAnswerToggle: {fileID: 555348440}
+  isMultipleChoiceToggle: {fileID: 1815161188}
+  isCaseSensitiveToggle: {fileID: 0}
 --- !u!1 &1739988797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,7 +3602,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1988185407
 GameObject:
