@@ -30,21 +30,24 @@ public class CreationTogglesController : MonoBehaviour
         
     }
     
-    //makes it so open answer and multiple choice toggle cannot both be true at the same time
+    /* makes it so open answer and multiple choice toggle cannot both be true at the same time
+    */
     public void OpenAnswerToggleEvent()
     {
-        //deactivate turn multiple choice toggle off when open answer is turned on
-        //make case sensitive interactable when open answer turned on
+        /*deactivate turn multiple choice toggle off when open answer is turned on.
+        make case sensitive interactable when open answer turned on.*/
         if (isOpenAnswerToggle.isOn)
         {
             isMultipleChoiceToggle.isOn = false;
             isCaseSensitiveToggle.interactable = true;
+            SetFlashcardManagerBools();
         }
         //make case sensitive not interactable and turn it off when open answer is turned off
         else if (!isOpenAnswerToggle.isOn)
         {
             isCaseSensitiveToggle.isOn = false;
             isCaseSensitiveToggle.interactable = false;
+           SetFlashcardManagerBools();
         }
     }
     
@@ -57,11 +60,26 @@ public class CreationTogglesController : MonoBehaviour
             isOpenAnswerToggle.isOn = false;
             isCaseSensitiveToggle.isOn = false;
             isCaseSensitiveToggle.interactable = false;
+            SetFlashcardManagerBools();
         }
         //make case sensitive interactable when multiple choice is turned off
         else if (!isMultipleChoiceToggle.isOn)
         {
             isCaseSensitiveToggle.interactable = true;
+            SetFlashcardManagerBools();
         }
+    }
+    
+    //what happens the CaseSensitive toggle is turned on or off
+    public void CaseSensitiveToggleEvent()
+    {
+        SetFlashcardManagerBools();
+    }
+    
+    //set the bools in FlashCardManager to equal the toggle isOn bools
+    private void SetFlashcardManagerBools()
+    {
+        flashcardListManager.isOpenAnswer = isOpenAnswerToggle.isOn;
+        flashcardListManager.isCaseSensitive = isCaseSensitiveToggle.isOn;
     }
 }
