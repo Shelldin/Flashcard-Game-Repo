@@ -11,13 +11,15 @@ public class NewCardCreator : MonoBehaviour
     
     public TMP_InputField questionInput;
     public TMP_InputField answerInput;
-    
-    
-  
 
-    // Update is called once per frame
-    void Update()
+    //set the question text for a new card to equal the text in the input field
+    public void QuestionInputEvent()
     {
-        
+        flashcardListManager.newQuestion = questionInput.text;
+    }
+    //set the answer text for a new card to equal the text in the input field
+    public void AnswerInputEvent()
+    {
+        flashcardListManager.newAnswer = answerInput.text;
     }
 }
