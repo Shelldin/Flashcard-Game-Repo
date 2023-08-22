@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;using UnityEngine.UI;
@@ -5,10 +6,6 @@ using UnityEngine;using UnityEngine.UI;
 public class CreationTogglesController : MonoBehaviour
 {
     
-    /*TO DO---
-    ADD REFERENCE FOR EITHER NEWCARDCREATOR OR FLASHCARDLISTMANAGER SO CREATION OF NEW CARDS WILL BE BASED
-    ON TOGGLE CHANGES
-    */
     
     public FlashcardListManager flashcardListManager;
     
@@ -22,16 +19,13 @@ public class CreationTogglesController : MonoBehaviour
         isOpenAnswerToggle.isOn = true;
         isMultipleChoiceToggle.isOn = false;
         isCaseSensitiveToggle.isOn = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //make sure the flash card manager booleans from the start
+        SetFlashcardManagerBools();
     }
     
-    /* makes it so open answer and multiple choice toggle cannot both be true at the same time
-    */
+
+    // makes it so open answer and multiple choice toggle cannot both be true at the same time
+   
     public void OpenAnswerToggleEvent()
     {
         /*deactivate turn multiple choice toggle off when open answer is turned on.
