@@ -22,4 +22,25 @@ public class NewCardCreator : MonoBehaviour
     {
         flashcardListManager.newAnswer = answerInput.text;
     }
+
+    //create new card once toggles and input fields have been filled/selected
+    public void CreateNewCardButtonEvent()
+    {
+        if (!string.IsNullOrEmpty(flashcardListManager.newQuestion) && 
+            !string.IsNullOrEmpty(flashcardListManager.newAnswer))
+        {
+            flashcardListManager.AddNewFlashcard(); 
+        }
+        //give error message if an input field is empty
+        else if (string.IsNullOrEmpty(flashcardListManager.newQuestion))
+        {
+            Debug.Log("please enter a question");
+        }
+        else if(string.IsNullOrEmpty(flashcardListManager.newAnswer))
+        {
+            Debug.Log("Please enter an answer");
+        }
+        
+    }
+    
 }
