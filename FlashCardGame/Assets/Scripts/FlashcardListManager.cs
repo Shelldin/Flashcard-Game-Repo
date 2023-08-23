@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class FlashcardListManager : MonoBehaviour
 {
-    public List<Flashcard> flashcards;
+    [SerializeField]
+    public List<Flashcard> flashcards = new List<Flashcard>();
 
     public string newQuestion;
     public string newAnswer;
@@ -15,7 +16,7 @@ public class FlashcardListManager : MonoBehaviour
 
     public void Start()
     {
-        flashcards = new List<Flashcard>();
+        
     }
 
     public void AddNewFlashcard()
