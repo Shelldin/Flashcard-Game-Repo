@@ -12,6 +12,8 @@ public class NewCardCreator : MonoBehaviour
     public TMP_InputField questionInput;
     public TMP_InputField answerInput;
 
+    public ErrorDisplayController errorDisplayController;
+
     //set the question text for a new card to equal the text in the input field
     public void QuestionInputEvent()
     {
@@ -34,10 +36,12 @@ public class NewCardCreator : MonoBehaviour
         //give error message if an input field is empty
         else if (string.IsNullOrEmpty(flashcardListManager.newQuestion))
         {
+            errorDisplayController.DisplayErrorText("Please enter a question");
             Debug.Log("please enter a question");
         }
         else if(string.IsNullOrEmpty(flashcardListManager.newAnswer))
         {
+            errorDisplayController.DisplayErrorText("Please enter an answer");
             Debug.Log("Please enter an answer");
         }
         
