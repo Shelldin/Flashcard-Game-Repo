@@ -19,10 +19,15 @@ public class ErrorDisplayController : MonoBehaviour
     public void DisplayErrorText(string errorMessage)
     {
         errorText.text = errorMessage;
+        if (errorDisplayCountdownCo != null)
+        {
+            StopCoroutine(errorDisplayCountdownCo);
+        }
         errorDisplayCountdownCo = StartCoroutine(ErrorDisplayCoroutine());
     }
     
     
+    //activates error text game object for a few seconds and then deactivates it
     private IEnumerator ErrorDisplayCoroutine()
     {
         errorText.gameObject.SetActive(true);
