@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,11 +9,20 @@ public class NewCardCreator : MonoBehaviour
 {
     public FlashcardListManager flashcardListManager;
     public CreationTogglesController creationTogglesController;
+    public ErrorDisplayController errorDisplayController;
     
     public TMP_InputField questionInput;
     public TMP_InputField answerInput;
 
-    public ErrorDisplayController errorDisplayController;
+    
+
+    private void Awake()
+    {
+        flashcardListManager = GetComponent<FlashcardListManager>();
+        creationTogglesController = GetComponent<CreationTogglesController>();
+        errorDisplayController = GetComponent<ErrorDisplayController>();
+
+    }
 
     //set the question text for a new card to equal the text in the input field
     public void QuestionInputEvent()

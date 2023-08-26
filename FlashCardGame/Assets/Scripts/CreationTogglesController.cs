@@ -12,7 +12,12 @@ public class CreationTogglesController : MonoBehaviour
     public Toggle isOpenAnswerToggle;
     public Toggle isMultipleChoiceToggle;
     public Toggle isCaseSensitiveToggle;
-    
+
+    private void Awake()
+    {
+        flashcardListManager = GetComponent<FlashcardListManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -13,12 +13,9 @@ public class FlashcardListManager : MonoBehaviour
 
     public bool isOpenAnswer;
     public bool isCaseSensitive;
+    
 
-    public void Start()
-    {
-        
-    }
-
+    //add new flash card to list based on parameters set by user
     public void AddNewFlashcard()
     {
         flashcards.Add(new Flashcard(newQuestion, newAnswer, isOpenAnswer, isCaseSensitive));
