@@ -72,7 +72,7 @@ public class NewCardCreator : MonoBehaviour
         }
         else if (flashcardListSize >= minimumListSize)
         {
-            finishButton.interactable = false;
+            finishButton.interactable = true;
         }
     }
 }
