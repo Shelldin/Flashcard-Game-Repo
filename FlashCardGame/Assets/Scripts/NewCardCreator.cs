@@ -68,11 +68,11 @@ public class NewCardCreator : MonoBehaviour
         
         if (flashcardListSize < minimumListSize)
         {
-            finishButton.gameObject.SetActive(false);
+            finishButton.interactable = false;
         }
         else if (flashcardListSize >= minimumListSize)
         {
-            finishButton.gameObject.SetActive(true);
+            finishButton.interactable = false;
         }
     }
 }
