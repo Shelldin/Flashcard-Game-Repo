@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public Button studyCardsButton;
-    public Button newFlashcardButton;
-    public Button editCardListButton;
+    public Button studyCardsButton,
+        newFlashcardButton,
+        editCardListButton,
+        newCardSetButton,
+        copyDeleteSetButton,
+        exitButton;
+     
     
     //empty game object containing Main Menu UI Elements
     public GameObject mainMenuUIGameObject;
