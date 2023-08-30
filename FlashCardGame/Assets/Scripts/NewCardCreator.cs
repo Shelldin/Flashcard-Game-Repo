@@ -14,7 +14,9 @@ public class NewCardCreator : MonoBehaviour
     public TMP_InputField questionInput;
     public TMP_InputField answerInput;
 
-    
+    public Button finishButton;
+
+    private int minimumListSize;
 
     private void Awake()
     {
@@ -54,7 +56,23 @@ public class NewCardCreator : MonoBehaviour
             errorDisplayController.DisplayErrorText("Please enter an answer");
             Debug.Log("Please enter an answer");
         }
-        
+
+        //check if list meets the minimum size each time a card is created
+        MinimumCardListSizeCheck();
     }
-    
+
+    //check if the cardlist is at least the minimum size before letting the user finish creating cards
+    public void MinimumCardListSizeCheck()
+    {
+        int flashcardListSize = flashcardListManager.flashcards.Count;
+        
+        if (flashcardListSize < minimumListSize)
+        {
+            finishButton.gameObject.SetActive(false);
+        }
+        else if (flashcardListSize >= minimumListSize)
+        {
+            finishButton.gameObject.SetActive(true);
+        }
+    }
 }
