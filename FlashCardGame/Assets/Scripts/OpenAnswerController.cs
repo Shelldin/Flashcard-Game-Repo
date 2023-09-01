@@ -1,24 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenAnswerController : MonoBehaviour
 {
+    
     /*
      * -CHECK ANSWER
      * - TOGGLES FOR ATTEMPTS
      * - CASE SENSITIVE CHECK
      */
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public FlashcardListManager flashcardListManager;
 
-    // Update is called once per frame
-    void Update()
+    public Toggle attemptToggle1,
+        attemptToggle2,
+        attemptToggle3;
+
+    public Toggle caseSensitiveToggle;
+
+    public Input answerInput;
+
+    public void OpenAnswerCardSetup()
     {
         
     }
+    
+
 }
