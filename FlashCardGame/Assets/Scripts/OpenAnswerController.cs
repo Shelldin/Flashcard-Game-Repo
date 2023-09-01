@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +14,16 @@ public class OpenAnswerController : MonoBehaviour
      */
     public FlashcardListManager flashcardListManager;
 
-    public Toggle attemptToggle1,
-        attemptToggle2,
-        attemptToggle3;
+    public List<Toggle> togglesList = new List<Toggle>();
 
     public Toggle caseSensitiveToggle;
 
     public Input answerInput;
+
+    private void Start()
+    {
+        flashcardListManager = GetComponent<FlashcardListManager>();
+    }
 
     public void OpenAnswerCardSetup()
     {
