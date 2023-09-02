@@ -27,7 +27,10 @@ public class OpenAnswerController : MonoBehaviour
 
     public void OpenAnswerCardSetup()
     {
-        
+        for (int i = 0; i < togglesList.Count; i++)
+        {
+            togglesList[i].isOn = false;
+        }
     }
     
 
