@@ -32,6 +32,11 @@ public class OpenAnswerController : MonoBehaviour
             togglesList[i].isOn = false;
         }
     }
+
+    public void SubmitEvent()
+    {
+        
+    }
     
 
 }
