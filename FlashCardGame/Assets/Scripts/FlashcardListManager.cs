@@ -26,7 +26,7 @@ public class FlashcardListManager : MonoBehaviour
     //set a random int
     private int RandomFlashcardInt()
     {
-        int randomFlashcardsIndex = Random.Range(0, flashcards.Count);
+        int randomFlashcardsIndex = Random.Range(0, flashcards.Count-1);
         return randomFlashcardsIndex;
     }
 

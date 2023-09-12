@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,10 @@ public class OpenAnswerController : MonoBehaviour
 
     public Toggle caseSensitiveToggle;
 
-    public Input answerInput;
+    public TMP_InputField answerInput;
+
+    public TextMeshPro questionText,
+        answerText;
 
     private void Start()
     {
@@ -35,7 +39,26 @@ public class OpenAnswerController : MonoBehaviour
 
     public void SubmitEvent()
     {
-        
+        if (answerInput.text == answerText.text)
+        {
+            //show answer
+            //congratulation message
+        }
+        else if (answerInput.text != answerText.text)
+        {
+            bool allAttemptsUsed = true;
+            for (int i = 0; i < togglesList.Count; i++)
+            {
+                if (togglesList[i].isOn = true)
+                {
+                    allAttemptsUsed = true;
+                }
+                else
+                {
+                    allAttemptsUsed = false;
+                }
+            }
+        }
     }
     
 
