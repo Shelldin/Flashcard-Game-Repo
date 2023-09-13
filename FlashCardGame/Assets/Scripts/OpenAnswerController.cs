@@ -15,6 +15,8 @@ public class OpenAnswerController : MonoBehaviour
      */
     public FlashcardListManager flashcardListManager;
 
+    public ErrorDisplayController errorDisplayController;
+
     public List<Toggle> togglesList = new List<Toggle>();
 
     public Toggle caseSensitiveToggle;
@@ -27,6 +29,7 @@ public class OpenAnswerController : MonoBehaviour
     private void Start()
     {
         flashcardListManager = GetComponent<FlashcardListManager>();
+        errorDisplayController = GetComponent<ErrorDisplayController>();
     }
 
     public void OpenAnswerCardSetup()
@@ -49,7 +52,7 @@ public class OpenAnswerController : MonoBehaviour
             bool allAttemptsUsed = true;
             for (int i = 0; i < togglesList.Count; i++)
             {
-                if (togglesList[i].isOn = true)
+                if (togglesList[i].isOn)
                 {
                     allAttemptsUsed = true;
                 }
@@ -57,6 +60,25 @@ public class OpenAnswerController : MonoBehaviour
                 {
                     allAttemptsUsed = false;
                 }
+            }
+
+            if (!allAttemptsUsed)
+            {
+                int attemptsRemaining = 3;
+
+                for (int i = 0; i < togglesList.Count; i++)
+                {
+                    if (togglesList[i].isOn)
+                    {
+                        attemptsRemaining--;
+                        if (attemptsRemaining < 0)
+                        {
+                            attemptsRemaining = 0;
+                        }
+                    }
+                }
+                //show answer
+                errorDisplayController.DisplayErrorText("Incorrect. "+ attemptsRemaining + " attempts remaining");
             }
         }
     }
