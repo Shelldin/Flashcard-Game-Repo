@@ -45,7 +45,7 @@ public class OpenAnswerController : MonoBehaviour
         if (answerInput.text == answerText.text)
         {
             //show answer
-            //congratulation message
+            errorDisplayController.DisplayErrorText("Correct!!!");
         }
         else if (answerInput.text != answerText.text)
         {
