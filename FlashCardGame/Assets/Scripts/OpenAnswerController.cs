@@ -40,15 +40,21 @@ public class OpenAnswerController : MonoBehaviour
         }
     }
 
+    // check to see if user's answer matches the correct answer
+    // if correct give success message and move to next card
+    // if incorrect give error message and mark the attempt (move to next card if out of attempts)
     public void SubmitEvent()
     {
+        //if correct answer is given
         if (answerInput.text == answerText.text)
         {
-            //show answer
+            //--show answer--
             errorDisplayController.DisplayErrorText("Correct!!!");
         }
+        //if incorrect
         else if (answerInput.text != answerText.text)
         {
+            //mark Attempt UI toggles
             bool allAttemptsUsed = true;
             for (int i = 0; i < togglesList.Count; i++)
             {
@@ -62,6 +68,7 @@ public class OpenAnswerController : MonoBehaviour
                 }
             }
 
+            //track attempts
             if (!allAttemptsUsed)
             {
                 int attemptsRemaining = 3;
@@ -77,7 +84,8 @@ public class OpenAnswerController : MonoBehaviour
                         }
                     }
                 }
-                //show answer
+                
+                //---show answer---
                 errorDisplayController.DisplayErrorText("Incorrect. "+ attemptsRemaining + " attempts remaining");
             }
         }
