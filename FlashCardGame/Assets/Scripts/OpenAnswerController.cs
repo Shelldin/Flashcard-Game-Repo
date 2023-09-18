@@ -95,9 +95,12 @@ public class OpenAnswerController : MonoBehaviour
                         }
                     }
                 }
-                
-                //---show answer---
                 errorDisplayController.DisplayErrorText("Incorrect. "+ attemptsRemaining + " attempts remaining");
+            }
+            else
+            {
+                //---show answer---
+                errorDisplayController.DisplayErrorText("Incorrect. No attempts remaining");
             }
         }
     }
