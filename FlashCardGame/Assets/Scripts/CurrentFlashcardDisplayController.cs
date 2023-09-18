@@ -36,6 +36,9 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         openAnswerController.questionText.text = currentFlashcard.question;
         openAnswerController.answerText.text = currentFlashcard.answer;
         openAnswerController.caseSensitiveToggle.isOn = currentFlashcard.caseSensitive;
+        openAnswerController.attemptsTakenInt = 0;
+        
+        openAnswerController.ResetAttempts();
     }
     
 }

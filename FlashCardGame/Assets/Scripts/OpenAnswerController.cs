@@ -26,14 +26,18 @@ public class OpenAnswerController : MonoBehaviour
     public TMP_Text questionText,
         answerText;
 
+    public int attemptsTakenInt;
+
     private void Start()
     {
         flashcardListManager = GetComponent<FlashcardListManager>();
         errorDisplayController = GetComponent<ErrorDisplayController>();
     }
 
-    public void OpenAnswerCardSetup()
+    public void ResetAttempts()
     {
+        attemptsTakenInt = 0;
+        
         for (int i = 0; i < togglesList.Count; i++)
         {
             togglesList[i].isOn = false;
@@ -54,7 +58,14 @@ public class OpenAnswerController : MonoBehaviour
         //if incorrect
         else if (answerInput.text != answerText.text)
         {
-            //mark Attempt UI toggles
+            //mark attempt toggle
+            if (attemptsTakenInt < togglesList.Count)
+            {
+                togglesList[attemptsTakenInt].isOn = true;
+                attemptsTakenInt++;
+            }
+            
+            //check if there are any remaining attempts
             bool allAttemptsUsed = true;
             for (int i = 0; i < togglesList.Count; i++)
             {
