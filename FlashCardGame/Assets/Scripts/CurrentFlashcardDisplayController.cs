@@ -10,6 +10,9 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
     public OpenAnswerController openAnswerController;
 
     public ErrorDisplayController errorDisplayController;
+
+    public GameObject openAnswerUIObject;
+    public GameObject multipleChoiceUIObject;
     
 
     // Start is called before the first frame update
@@ -18,7 +21,21 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         flashcardListManager = GetComponent<FlashcardListManager>();
         openAnswerController = GetComponent<OpenAnswerController>();
         errorDisplayController = GetComponent<ErrorDisplayController>();
+        
+        //THIS IS IN THE START FUNCTION FOR TESTING/DEBUGGING:
+        SetFlashcardUI();
     }
     
+    //set the Flashcard UI based on a randomly selected flashcard
+    public void SetFlashcardUI()
+    {
+        flashcardListManager.SelectRandomFlashcard();
+
+        Flashcard currentFlashcard = flashcardListManager.currentFlashcard;
+
+        openAnswerController.questionText.text = currentFlashcard.question;
+        openAnswerController.answerText.text = currentFlashcard.answer;
+        openAnswerController.caseSensitiveToggle.isOn = currentFlashcard.caseSensitive;
+    }
     
 }

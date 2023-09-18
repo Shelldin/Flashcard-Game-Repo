@@ -23,7 +23,7 @@ public class OpenAnswerController : MonoBehaviour
 
     public TMP_InputField answerInput;
 
-    public TextMeshPro questionText,
+    public TMP_Text questionText,
         answerText;
 
     private void Start()
