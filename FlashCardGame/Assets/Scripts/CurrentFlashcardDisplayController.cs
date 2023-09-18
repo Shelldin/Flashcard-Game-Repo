@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CurrentFlashcardDisplayController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    public FlashcardListManager flashcardListManager;
 
-    // Update is called once per frame
-    void Update()
+    public OpenAnswerController openAnswerController;
+
+    public ErrorDisplayController errorDisplayController;
+    
+
+    // Start is called before the first frame update
+    private void Start()
     {
-        
+        flashcardListManager = GetComponent<FlashcardListManager>();
+        openAnswerController = GetComponent<OpenAnswerController>();
+        errorDisplayController = GetComponent<ErrorDisplayController>();
     }
+    
+    
 }
