@@ -31,7 +31,7 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
     }
     
     //set the Flashcard UI based on a randomly selected flashcard
-    public void SetFlashcardUI()
+    private void SetFlashcardUI()
     {
         flashcardListManager.SelectRandomFlashcard();
 
@@ -45,6 +45,19 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         openAnswerController.attemptsTakenInt = 0;
         
         openAnswerController.ResetAttempts();
+    }
+    
+    //activate answer text game object
+    public void ActivateTextAnswerObj(Flashcard currentFlashcard)
+    {
+        if (currentFlashcard.openAnswer)
+        {
+            openAnswerController.answerText.gameObject.SetActive(true);
+        }
+        else if(!currentFlashcard.openAnswer)
+        {
+            //MULTIPLE CHOICE ANSWER
+        }
     }
 
     //swap between the user answer and the correct answer with a button
