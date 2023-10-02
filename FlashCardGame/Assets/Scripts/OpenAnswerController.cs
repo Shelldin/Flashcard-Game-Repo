@@ -101,8 +101,8 @@ public class OpenAnswerController : MonoBehaviour
             }
             else
             {
-                
                 errorDisplayController.DisplayErrorText("Incorrect. No attempts remaining");
+                currentFlashcardDisplayController.viewYourAnswerButton.gameObject.SetActive(true);
                 currentFlashcardDisplayController.viewYourAnswerButton.interactable = true;
             }
         }
