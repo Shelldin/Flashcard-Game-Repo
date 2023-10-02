@@ -17,6 +17,8 @@ public class OpenAnswerController : MonoBehaviour
 
     public ErrorDisplayController errorDisplayController;
 
+    public CurrentFlashcardDisplayController currentFlashcardDisplayController;
+
     public List<Toggle> togglesList = new List<Toggle>();
 
     public Toggle caseSensitiveToggle;
@@ -99,8 +101,9 @@ public class OpenAnswerController : MonoBehaviour
             }
             else
             {
-                //---show answer---
+                
                 errorDisplayController.DisplayErrorText("Incorrect. No attempts remaining");
+                currentFlashcardDisplayController.viewYourAnswerButton.interactable = true;
             }
         }
     }
