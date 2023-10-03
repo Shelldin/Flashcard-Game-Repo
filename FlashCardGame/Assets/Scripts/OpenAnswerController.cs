@@ -54,7 +54,7 @@ public class OpenAnswerController : MonoBehaviour
         //if correct answer is given
         if (answerInput.text == answerText.text)
         {
-            //--show answer--
+            SwapAnswerDisplay();
             errorDisplayController.DisplayErrorText("Correct!!!");
         }
         //if incorrect
@@ -102,10 +102,25 @@ public class OpenAnswerController : MonoBehaviour
             else
             {
                 errorDisplayController.DisplayErrorText("Incorrect. No attempts remaining");
-                
+                SwapAnswerDisplay();
                 currentFlashcardDisplayController.viewYourAnswerButton.gameObject.SetActive(true);
                 currentFlashcardDisplayController.viewYourAnswerButton.interactable = true;
             }
+        }
+    }
+
+    //swap between player answer and correct answer
+    private void SwapAnswerDisplay()
+    {
+        if (answerInput.gameObject.activeSelf)
+        {
+            answerText.gameObject.SetActive(false);
+            answerInput.gameObject.SetActive(true);
+        }
+        else if (answerText.gameObject.activeSelf)
+        {
+            answerText.gameObject.SetActive(true);
+            answerInput.gameObject.SetActive(false);
         }
     }
     

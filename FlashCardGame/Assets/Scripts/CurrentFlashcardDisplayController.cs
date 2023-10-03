@@ -17,6 +17,8 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
 
     public Button viewYourAnswerButton,
         viewCorrectAnswerButton;
+
+    private Flashcard currentFlashcard;
     
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
     {
         flashcardListManager.SelectRandomFlashcard();
 
-        Flashcard currentFlashcard = flashcardListManager.currentFlashcard;
+         currentFlashcard = flashcardListManager.currentFlashcard;
         
         openAnswerController.answerInput.gameObject.SetActive(true);
 
@@ -48,7 +50,7 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
     }
     
     //activate answer text game object
-    public void ActivateTextAnswerObj(Flashcard currentFlashcard)
+    private void ActivateTextAnswerObj(Flashcard flashcard)
     {
         if (currentFlashcard.openAnswer)
         {
@@ -68,7 +70,7 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
             viewYourAnswerButton.gameObject.SetActive(false);
             viewCorrectAnswerButton.gameObject.SetActive(true);
             openAnswerController.answerText.gameObject.SetActive(false);
-            openAnswerController.answerInput.gameObject.SetActive(true);
+            ActivateTextAnswerObj(currentFlashcard);
         }
         else if (viewCorrectAnswerButton.gameObject.activeSelf)
         {
