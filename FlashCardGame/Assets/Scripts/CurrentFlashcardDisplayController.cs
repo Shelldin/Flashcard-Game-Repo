@@ -62,6 +62,42 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         }
     }
 
+    private void ActivateUserAnswerInputObj(Flashcard flashcard)
+    {
+        if (currentFlashcard.openAnswer)
+        {
+            openAnswerController.answerInput.gameObject.SetActive(true);
+        }
+        else if(!currentFlashcard.openAnswer)
+        {
+            //MULTIPLE CHOICE ANSWER
+        }
+    }
+
+    private void DeactivateTextAnswerObj(Flashcard flashcard)
+    {
+        if (currentFlashcard.openAnswer)
+        {
+            openAnswerController.answerText.gameObject.SetActive(false);
+        }
+        else if(!currentFlashcard.openAnswer)
+        {
+            //MULTIPLE CHOICE ANSWER
+        }
+    }
+
+    private void DeactivateUserAnswerInputObj(Flashcard flashcard)
+    {
+        if (currentFlashcard.openAnswer)
+        {
+            openAnswerController.answerInput.gameObject.SetActive(false);
+        }
+        else if(!currentFlashcard.openAnswer)
+        {
+            //MULTIPLE CHOICE ANSWER
+        }
+    }
+
     //swap between the user answer and the correct answer with a button
     public void SwapAnswerViewEvent()
     {
@@ -69,16 +105,15 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         {
             viewYourAnswerButton.gameObject.SetActive(false);
             viewCorrectAnswerButton.gameObject.SetActive(true);
-            openAnswerController.answerText.gameObject.SetActive(false);
-            openAnswerController.answerInput.gameObject.SetActive(true);
+            DeactivateTextAnswerObj(currentFlashcard);
+            ActivateUserAnswerInputObj(currentFlashcard);
         }
         else if (viewCorrectAnswerButton.gameObject.activeSelf)
         {
             viewCorrectAnswerButton.gameObject.SetActive(false);
             viewYourAnswerButton.gameObject.SetActive(true);
-            openAnswerController.answerInput.gameObject.SetActive(false);
+            DeactivateUserAnswerInputObj(currentFlashcard);
             ActivateTextAnswerObj(currentFlashcard);
-            //openAnswerController.answerText.gameObject.SetActive(true);
         }
     }
     
