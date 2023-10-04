@@ -112,7 +112,7 @@ public class OpenAnswerController : MonoBehaviour
     //swap between player answer and correct answer
     private void SwapAnswerDisplay()
     {
-        if (answerInput.gameObject.activeSelf)
+        if (answerText.gameObject.activeSelf)
         {
             answerText.gameObject.SetActive(false);
             answerInput.gameObject.SetActive(true);
@@ -125,6 +125,4 @@ public class OpenAnswerController : MonoBehaviour
             Debug.Log("swap to correct answer");
         }
     }
-    
-
 }
