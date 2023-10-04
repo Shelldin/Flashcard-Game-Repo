@@ -70,14 +70,15 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
             viewYourAnswerButton.gameObject.SetActive(false);
             viewCorrectAnswerButton.gameObject.SetActive(true);
             openAnswerController.answerText.gameObject.SetActive(false);
-            ActivateTextAnswerObj(currentFlashcard);
+            openAnswerController.answerInput.gameObject.SetActive(true);
         }
         else if (viewCorrectAnswerButton.gameObject.activeSelf)
         {
             viewCorrectAnswerButton.gameObject.SetActive(false);
             viewYourAnswerButton.gameObject.SetActive(true);
             openAnswerController.answerInput.gameObject.SetActive(false);
-            openAnswerController.answerText.gameObject.SetActive(true);
+            ActivateTextAnswerObj(currentFlashcard);
+            //openAnswerController.answerText.gameObject.SetActive(true);
         }
     }
     

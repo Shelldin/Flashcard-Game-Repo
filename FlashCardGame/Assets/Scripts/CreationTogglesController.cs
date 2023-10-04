@@ -6,7 +6,6 @@ using UnityEngine;using UnityEngine.UI;
 public class CreationTogglesController : MonoBehaviour
 {
     
-    
     public FlashcardListManager flashcardListManager;
     
     public Toggle isOpenAnswerToggle;

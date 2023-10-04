@@ -747,7 +747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &171388453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.8784314}
+    m_DisabledColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.59607846}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -787,7 +787,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 171388454}
   m_OnClick:
     m_PersistentCalls:
@@ -3384,7 +3384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &569319552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7414,6 +7414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashcardListManager: {fileID: 1684801371}
   errorDisplayController: {fileID: 1684801374}
+  currentFlashcardDisplayController: {fileID: 1684801376}
   togglesList:
   - {fileID: 43805841}
   - {fileID: 788076531}
@@ -7439,7 +7440,7 @@ MonoBehaviour:
   openAnswerController: {fileID: 1684801375}
   errorDisplayController: {fileID: 1684801374}
   openAnswerUIObject: {fileID: 535388820}
-  multipleChoiceUIObject: {fileID: 0}
+  multipleChoiceUIObject: {fileID: 393640008}
   viewYourAnswerButton: {fileID: 171388453}
   viewCorrectAnswerButton: {fileID: 569319553}
 --- !u!1 &1739988797
