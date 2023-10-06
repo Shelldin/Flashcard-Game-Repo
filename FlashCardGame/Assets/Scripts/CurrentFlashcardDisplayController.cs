@@ -16,7 +16,9 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
     public GameObject multipleChoiceUIObject;
 
     public Button viewYourAnswerButton,
-        viewCorrectAnswerButton;
+        viewCorrectAnswerButton,
+        submitAnswerButton,
+        nextFlashcardButton;
 
     private Flashcard currentFlashcard;
     
@@ -116,5 +118,10 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
             ActivateTextAnswerObj(currentFlashcard);
         }
     }
-    
+
+    public void SetNextFlashcardButtonActive()
+    {
+        submitAnswerButton.gameObject.SetActive(false);
+        nextFlashcardButton.gameObject.SetActive(true);
+    }
 }
