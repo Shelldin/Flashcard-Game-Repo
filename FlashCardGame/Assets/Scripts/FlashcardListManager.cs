@@ -9,6 +9,10 @@ public class FlashcardListManager : MonoBehaviour
     [SerializeField]
     public List<Flashcard> flashcards = new List<Flashcard>();
 
+    public List<Flashcard> currentFlashcards = new List<Flashcard>();
+
+    public List<Flashcard> usedFlashcards = new List<Flashcard>();
+
     public Flashcard currentFlashcard;
 
     public string newQuestion;
@@ -16,6 +20,11 @@ public class FlashcardListManager : MonoBehaviour
 
     public bool isOpenAnswer;
     public bool isCaseSensitive;
+
+    private void Start()
+    {
+        //POPULATE CURRENT FLASHCARD FUNCTION
+    }
 
     //add new flash card to list based on parameters set by user
     public void AddNewFlashcard()
@@ -35,5 +44,12 @@ public class FlashcardListManager : MonoBehaviour
     {
         int randomIndex = RandomFlashcardInt();
         currentFlashcard = flashcards[randomIndex];
+    }
+
+    //move flashcards in one list to another list
+    private void MoveFlashcards
+        (Flashcard flashcardToMove, List<Flashcard> originalFlashcards, List<Flashcard> newFlashcards)
+    {
+        newFlashcards.Add(flashcardToMove);
     }
 }
