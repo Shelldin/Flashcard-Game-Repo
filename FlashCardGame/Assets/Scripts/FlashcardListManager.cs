@@ -46,10 +46,17 @@ public class FlashcardListManager : MonoBehaviour
         currentFlashcard = flashcards[randomIndex];
     }
 
+    //remove flashcard from a list
+    private void RemoveFlashcardFromList(List<Flashcard> listOfFlashcards, Flashcard flashcardToRemove)
+    {
+        listOfFlashcards.Remove(flashcardToRemove);
+    }
+
     //move flashcards in one list to another list
     private void MoveFlashcards
-        (Flashcard flashcardToMove, List<Flashcard> originalFlashcards, List<Flashcard> newFlashcards)
+        (Flashcard flashcardToMove, List<Flashcard> originalFlashcardList, List<Flashcard> newFlashcardList)
     {
-        newFlashcards.Add(flashcardToMove);
+        newFlashcardList.Add(flashcardToMove);
+        RemoveFlashcardFromList(originalFlashcardList, flashcardToMove);
     }
 }
