@@ -55,6 +55,7 @@ public class OpenAnswerController : MonoBehaviour
         if (answerInput.text == answerText.text)
         {
             SwapAnswerDisplay();
+            currentFlashcardDisplayController.SetNextFlashcardButtonActive();
             errorDisplayController.DisplayErrorText("Correct!!!");
         }
         //if incorrect
@@ -116,13 +117,13 @@ public class OpenAnswerController : MonoBehaviour
         {
             answerText.gameObject.SetActive(false);
             answerInput.gameObject.SetActive(true);
-            Debug.Log("swapping to your answer");
+            
         }
         else if (!answerText.gameObject.activeSelf)
         {
             answerText.gameObject.SetActive(true);
             answerInput.gameObject.SetActive(false);
-            Debug.Log("swap to correct answer");
+            
         }
     }
 }

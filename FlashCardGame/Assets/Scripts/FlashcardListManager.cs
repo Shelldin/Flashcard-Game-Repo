@@ -9,8 +9,10 @@ public class FlashcardListManager : MonoBehaviour
     [SerializeField]
     public List<Flashcard> flashcards = new List<Flashcard>();
 
+    [SerializeField]
     public List<Flashcard> currentFlashcards = new List<Flashcard>();
 
+    [SerializeField]
     public List<Flashcard> usedFlashcards = new List<Flashcard>();
 
     public Flashcard currentFlashcard;
@@ -53,7 +55,7 @@ public class FlashcardListManager : MonoBehaviour
     }
 
     //move flashcards in one list to another list
-    private void MoveFlashcards
+    public void MoveFlashcards
         (Flashcard flashcardToMove, List<Flashcard> originalFlashcardList, List<Flashcard> newFlashcardList)
     {
         newFlashcardList.Add(flashcardToMove);

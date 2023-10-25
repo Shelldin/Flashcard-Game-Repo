@@ -119,9 +119,16 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         }
     }
 
+    //swap to the next flashcard button after the final answer has been submitted
     public void SetNextFlashcardButtonActive()
     {
         submitAnswerButton.gameObject.SetActive(false);
         nextFlashcardButton.gameObject.SetActive(true);
+    }
+
+    public void NextFlashcardEvent()
+    {
+        flashcardListManager.MoveFlashcards(currentFlashcard, flashcardListManager.currentFlashcards,
+            flashcardListManager.usedFlashcards);
     }
 }
