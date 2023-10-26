@@ -128,7 +128,13 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
 
     public void NextFlashcardEvent()
     {
-        flashcardListManager.MoveFlashcards(currentFlashcard, flashcardListManager.currentFlashcards,
-            flashcardListManager.usedFlashcards);
+        List<Flashcard> currentFlashcardList = flashcardListManager.currentFlashcards;
+        List<Flashcard> usedFlashcardList = flashcardListManager.usedFlashcards;
+
+        flashcardListManager.MoveFlashcards(currentFlashcard, currentFlashcardList,
+            usedFlashcardList);
+        
+        //IF STATEMENT TO CHECK IF CURRENT LIST IS EMPTY. IF TRUE. MOVE ALL THE CARDS BACK FROM USED TO CURRENT
+        SetFlashcardUI();
     }
 }
