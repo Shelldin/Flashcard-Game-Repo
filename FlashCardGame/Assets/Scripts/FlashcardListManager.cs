@@ -61,4 +61,13 @@ public class FlashcardListManager : MonoBehaviour
         newFlashcardList.Add(flashcardToMove);
         RemoveFlashcardFromList(originalFlashcardList, flashcardToMove);
     }
+
+    //move all flashcards in one list to another
+    public void MoveAllFlashcards(List<Flashcard> originFlashcardList, List<Flashcard> destinationFlashcardList)
+    {
+        foreach (Flashcard card in originFlashcardList)
+        {
+            MoveFlashcards(card, originFlashcardList, destinationFlashcardList);
+        }
+    }
 }
