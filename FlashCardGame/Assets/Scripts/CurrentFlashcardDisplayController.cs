@@ -126,19 +126,20 @@ public class CurrentFlashcardDisplayController : MonoBehaviour
         nextFlashcardButton.gameObject.SetActive(true);
     }
 
+    //setup the next flashcard
     public void NextFlashcardEvent()
     {
         List<Flashcard> currentFlashcardList = flashcardListManager.currentFlashcards;
         List<Flashcard> usedFlashcardList = flashcardListManager.usedFlashcards;
-        
-        if (currentFlashcardList.Count == 0)
-        {
-            
-        }
 
         flashcardListManager.MoveFlashcards(currentFlashcard, currentFlashcardList,
             usedFlashcardList);
         
+        if (currentFlashcardList.Count == 0)
+        {
+            flashcardListManager.MoveAllFlashcards
+                (usedFlashcardList, currentFlashcardList);
+        }
         
         SetFlashcardUI();
     }
